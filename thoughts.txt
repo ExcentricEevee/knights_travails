@@ -1,0 +1,13 @@
+The project is suppose to be about, given a chess board and a knight piece,
+and given a square coordinate for the knight to travel to, it should report the shortest path.
+
+This means you need the rules of chess somewhat in place. ie no moving out of bounds,
+the way in which a knight moves, etc. Using a start position, and a user-input end position,
+you will need to find the shortest path, aka using Breadth-First Search, but instead of a
+binary search tree, we will need to make a graph/list of a sort that populates until we reach
+our target coordinates(??)
+
+In other words, the BFS method is built right into the graph populating method, so to speak,
+in that the graph populates recursively where the end condition is when the target coordinate is found.
+Because of how chess pieces move, however, it is important to not revisit squares.
+Ie don't move back and forth between the same squares
