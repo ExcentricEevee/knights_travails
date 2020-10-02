@@ -1,4 +1,3 @@
-require 'pry'
 require_relative 'node'
 
 class Board
@@ -15,14 +14,7 @@ class Board
     8.times do
       result << Array.new(8)
     end
-
-    #populate each individual chess "square" with coordinates based on their array indices
-    result.each_with_index do |row, i|
-      row.each_index do |j|
-        row[j] = Node.new([i, j])
-      end
-    end
-    @rows = result
+    rows = result
   end
 
 end
