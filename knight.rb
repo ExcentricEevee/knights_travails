@@ -14,6 +14,7 @@ class Knight
     return node if node.coordinates == finish
 
     pos = node.coordinates
+    #check all possible moves from current location
     #up
     valid(pos[0]-2, pos[1]-1, node)
     valid(pos[0]-2, pos[1]+1, node)
@@ -58,6 +59,9 @@ class Knight
   end
 
   def knight_moves(start, finish)
+    #refresh board state/clear out Node objects
+    #intended to just call board.initialize, but the method is private
+    board.rows = board.build_board
     self.root = Node.new(start)
     build_tree(finish)
     path = level_order(finish)
@@ -66,8 +70,3 @@ class Knight
 
 end
 
-
-board = Board.new
-knight = Knight.new(board)
-
-p knight.knight_moves([4,3], [7,7])
